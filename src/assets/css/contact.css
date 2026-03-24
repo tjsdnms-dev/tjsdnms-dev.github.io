@@ -15,6 +15,7 @@
   line-height: 2.6rem;
   font-family: 'SCDream';
   letter-spacing: -0.1rem;
+  border: solid 1px #ddd;
 }
 #contact .sub-tit p {
   margin: 0;
