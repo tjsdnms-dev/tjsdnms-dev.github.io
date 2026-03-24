@@ -1,0 +1,592 @@
+/**
+ * @font-face 폰트 정의
+ */
+/* Light */
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: url('/fonts/NotoSansKR-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('/fonts/Ubuntu-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SCDream';
+  src: url('/fonts/SCDream1.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SCDream';
+  src: url('/fonts/SCDream2.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SCDream';
+  src: url('/fonts/SCDream3.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Regular */
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: url('/fonts/NotoSansKR-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('/fonts/Ubuntu-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Beau_Rivage';
+  src: url('/fonts/BeauRivage-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SCDream';
+  src: url('/fonts/SCDream4.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Medium */
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: url('fonts/NotoSansKR-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('/fonts/Ubuntu-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SCDream';
+  src: url('/fonts/SCDream5.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SCDream';
+  src: url('/fonts/SCDream6.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bold */
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: url('/fonts/NotoSansKR-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('/fonts/Ubuntu-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/**
+ * 공용 CSS 변수
+ */
+:root {
+  /* font */
+  --font-korean: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Arial, sans-serif;
+  --font-english: 'Roboto', Arial, sans-serif;
+  --font-base: var(--font-korean);
+  --font-heading: var(--font-korean);
+
+  /* font weight */
+  --fw-light: 300;
+  --fw-base: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  /* font size */
+  --fs-xs: 12px;
+  --fs-sm: 13px;
+  --fs-base: 14px; /* 기본 */
+  --fs-md: 16px;
+  --fs-lg: 20px;
+  --fs-xl: 24px;
+  --fs-2xl: 32px;
+
+  /* color */
+  --color-white: #fff;
+  --color-black: #000;
+  --text-color: ##303133;
+  --text-color-muted: #666;
+  --text-color-secondary: #909399;
+  --text-color-placeholder: #a8abb2;
+  --text-color-disabled: #c0c4cc;
+  --border-color: #ddd;
+  --border-color-light: #e5e7eb;
+  --border-color-dark: #bbb;
+
+  --color-primary: #409eff;
+  --color-primary-light-3: rgb(121.3, 187.1, 255);
+  --color-primary-light-5: rgb(159.5, 206.5, 255);
+  --color-primary-light-7: rgb(197.7, 225.9, 255);
+  --color-primary-light-8: rgb(216.8, 235.6, 255);
+  --color-primary-light-9: rgb(235.9, 245.3, 255);
+  --color-primary-dark-2: rgb(51.2, 126.4, 204);
+  --color-success: #67c23a;
+  --color-success-light-3: rgb(148.6, 212.3, 117.1);
+  --color-success-light-5: rgb(179, 224.5, 156.5);
+  --color-success-light-7: rgb(209.4, 236.7, 195.9);
+  --color-success-light-8: rgb(224.6, 242.8, 215.6);
+  --color-success-light-9: rgb(239.8, 248.9, 235.3);
+  --color-success-dark-2: rgb(82.4, 155.2, 46.4);
+  --color-warning: #e6a23c;
+  --color-warning-light-3: rgb(237.5, 189.9, 118.5);
+  --color-warning-light-5: rgb(242.5, 208.5, 157.5);
+  --color-warning-light-7: rgb(247.5, 227.1, 196.5);
+  --color-warning-light-8: rgb(250, 236.4, 216);
+  --color-warning-light-9: rgb(252.5, 245.7, 235.5);
+  --color-warning-dark-2: rgb(184, 129.6, 48);
+  --color-danger: #f56c6c;
+  --color-danger-light-3: rgb(248, 152.1, 152.1);
+  --color-danger-light-5: rgb(250, 181.5, 181.5);
+  --color-danger-light-7: rgb(252, 210.9, 210.9);
+  --color-danger-light-8: rgb(253, 225.6, 225.6);
+  --color-danger-light-9: rgb(254, 240.3, 240.3);
+  --color-danger-dark-2: rgb(196, 86.4, 86.4);
+  --color-error: #f56c6c;
+  --color-error-light-3: rgb(248, 152.1, 152.1);
+  --color-error-light-5: rgb(250, 181.5, 181.5);
+  --color-error-light-7: rgb(252, 210.9, 210.9);
+  --color-error-light-8: rgb(253, 225.6, 225.6);
+  --color-error-light-9: rgb(254, 240.3, 240.3);
+  --color-error-dark-2: rgb(196, 86.4, 86.4);
+  --color-info: #909399;
+  --color-info-light-3: rgb(177.3, 179.4, 183.6);
+  --color-info-light-5: rgb(199.5, 201, 204);
+  --color-info-light-7: rgb(221.7, 222.6, 224.4);
+  --color-info-light-8: rgb(232.8, 233.4, 234.6);
+  --color-info-light-9: rgb(243.9, 244.2, 244.8);
+  --color-info-light-10: rgb(247, 247, 247);
+  --color-info-dark-2: rgb(115.2, 117.6, 122.4);
+
+  /* radius */
+  --radius-sm: 4px;
+  --radius-base: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* boxshadow */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-base: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  /* line height*/
+  --lh-tight: 1.3;
+  --lh-normal: 1.5;
+  --lh-loose: 1.7;
+
+  /* header */
+  --header-h: 65px;
+
+  /* footer */
+  --footer-h: 85px;
+  --footer-mobile-h: 45px;
+}
+
+/**
+ * Base Style
+ */
+body {
+  position: relative;
+  font-family: var(--font-base);
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  color: var(--text-color);
+  background: var(--color-white);
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
+ul,
+li,
+dt,
+dd,
+div,
+p,
+span {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+
+/**
+ * Full Page
+ */
+
+/* 페이지 영역 */
+.fade-container {
+  height: 100vh;
+  overflow: hidden; /* 실제 스크롤 이동이 아니라 전환 방식이므로 스크롤바 제거 */
+}
+.page {
+  position: relative;
+  height: calc(100% - var(--header-h));
+  padding: 0 2rem;
+  padding-top: var(--header-h);
+  display: grid;
+  align-items: center;
+}
+.page * {
+  position: relative;
+  z-index: 1;
+}
+/* 데스크탑 전환 페이지에서만 높이 고정이 필요하면 fade-page에만 */
+.fade-page {
+  height: calc(100vh - var(--header-h, 65px));
+  display: grid;
+  align-items: center;
+}
+
+/* 모바일 스택에서는 각 섹션이 화면 높이를 최소로만 갖도록 */
+.stack-page {
+  min-height: calc(100vh - var(--header-h, 65px));
+  /* display/grid 정렬이 필요하면 여기로 */
+  display: grid;
+  align-items: center;
+}
+
+/* Fade transition */
+.fade-enter-active,
+.fade-leave-active {
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+/* 모바일용 페이지 스크롤 영역 */
+.stack-container {
+  height: 100vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/**
+ * Header Style
+ */
+.header {
+  position: fixed;
+  inset: 0 0 auto 0; /* top:0; left:0; right:0; */
+  height: var(--header-h);
+  z-index: 10000;
+
+  /* 상태별 색상 토큰(기본=Home) */
+  --header-bg: transparent;
+  --logo-color: var(--color-white);
+  --menu-color: rgba(255, 255, 255, 0.65);
+
+  background: var(--header-bg);
+}
+
+.header .con {
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+
+.header .logo {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  font-family: 'Ubuntu';
+  text-decoration: none;
+  color: var(--logo-color);
+}
+
+.menu {
+  justify-self: center;
+  display: flex;
+  gap: 2.8rem;
+}
+
+.menu-item {
+  position: relative;
+  border: 0;
+  background: transparent;
+  padding: 10px 0;
+  cursor: pointer;
+  font-family: var(--font-english);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.05rem;
+  color: var(--menu-color);
+}
+
+.menu-item::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(135deg, #337ecc 0%, #409eff 100%);
+  transition: width 0.3s;
+}
+
+.menu-item:hover::after,
+.menu-item.active::after {
+  width: 100%;
+}
+
+.menu-item.active {
+  color: var(--color-primary);
+  font-weight: var(--fw-bold);
+}
+
+/* Home이 아닐 때만 흰색 반투명 + blur */
+.header-scrolled {
+  --header-bg: rgba(255, 255, 255, 0.55);
+  --logo-color: var(--color-black);
+  --menu-color: var(--text-color-secondary);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+}
+#app:has(.btn-menu.open) .header-scrolled {
+  --header-bg: transparent;
+  border: 0;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* 모바일용 메뉴 버튼 */
+.header .btn-menu {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  z-index: 10001;
+  display: none;
+  --menu-line: var(--color-white);
+}
+.header.header-scrolled .btn-menu,
+.header .btn-menu.open {
+  --menu-line: var(--color-black); /* 헤더가 스크롤 상태면 라인 색상 변경 */
+}
+.header .btn-menu span,
+.header .btn-menu span::before,
+.header .btn-menu span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--menu-line);
+  transform-origin: center;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+/* 가운데 라인 */
+.header .btn-menu span {
+  top: calc(50% - 1px);
+}
+.header .btn-menu.open span {
+  background: transparent;
+}
+/* 위/아래 라인 */
+.header .btn-menu span::before {
+  top: -9px;
+}
+.header .btn-menu span::after {
+  top: 9px;
+}
+.header .btn-menu.open span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.header .btn-menu.open span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+/* 오버레이 */
+.m-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.45);
+  display: grid;
+  place-items: start end;
+}
+.m-panel {
+  /*width: min(82vw, 360px);*/
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background: var(--color-white);
+  display: grid;
+  place-items: center; /* m-nav 가로/세로 중앙 */
+}
+.m-nav {
+  display: grid;
+  gap: 20px;
+}
+.m-item {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 14px 12px;
+  cursor: pointer;
+  text-align: center;
+  font-family: var(--font-english);
+  font-size: var(--fs-2xl);
+  color: var(--text-color-muted);
+}
+.m-item.active {
+  font-weight: var(--fw-bold);
+  color: var(--color-primary-dark-2);
+}
+
+/**
+ * Top 버튼
+ */
+.btn-top {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  width: 45px;
+  height: 45px;
+  z-index: 1000;
+  border-radius: var(--radius-full);
+  border: none;
+  background: var(--color-primary);
+  cursor: pointer;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  box-shadow: var(--shadow-base);
+}
+.btn-top::after {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  vertical-align: middle;
+  color: var(--color-white);
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(-45deg);
+}
+.btn-top:hover {
+  transform: translateY(-3px);
+}
+
+/**
+ * Mobile 전환
+ */
+@media (max-width: 1080px) {
+  .header .con {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .header .btn-menu {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 1080px) and (orientation: landscape) {
+  /* 모바일 가로형 전용 CSS */
+  .stack-page {
+    padding-bottom: 3.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .btn-top {
+    right: 1.5rem;
+    bottom: 1.5rem;
+  }
+}
